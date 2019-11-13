@@ -16,7 +16,6 @@ pub fn qqq(input: TokenStream) -> TokenStream {
     let ast = syn::parse_derive_input(&source).unwrap();
 
     let struct_name = &ast.ident;
-    println!("struct_name {:?}", struct_name);
     let mut code = quote!();
 
     if let syn::Body::Struct(s) = ast.body {
